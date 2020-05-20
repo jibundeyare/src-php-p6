@@ -35,6 +35,24 @@ if ($stock == 0) {
     echo '<br>';
 }
 
+$user_age = 13;
+$user_has_payment = false;
+
+// l'utilisateur doit avoir plus de 12 ans et posséder un moyen de paiement
+if ($user_age > 12 && $user_has_payment) {
+    echo "l'utilisateur peut voir le film";
+    echo '<br>';
+}
+
+$user_credit = 100;
+$user_bank_card = true;
+
+// l'utilisateur doit avoir plus de 20 unités de crédis ou posséder un moyen de paiement
+if ($user_credit > 20 || $user_bank_card) {
+    echo "l'utilisateur peut voir le film";
+    echo '<br>';
+}
+
 // switch case
 switch (true) {
     case $stock == 0:
