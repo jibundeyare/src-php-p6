@@ -134,3 +134,42 @@ echo '<pre>';
 var_dump($result);
 echo '</pre>';
 echo '<br>';
+
+// Exo 1.5
+// À l'aide la fonction "distance()", créez une fonction qui renvoie la liste des positions qui sont à une distance inférieure à 50
+
+// une fonction qui calcul la distance entre une position et l'origine
+function distance($x, $y) {
+    return sqrt($x ** 2 + $y ** 2);
+}
+
+$positions = [
+    [10, 15],
+    [100, 100],
+    [40, 35],
+    [60, 5],
+    [23, 27],
+];
+
+// exemple d'utilisaton de la fonction "distance()" avec la valeur associée à l'index 3, c-à-d [60, 5]
+$position = $positions[3];
+$resultat = distance($position[0], $position[1]);
+
+function filterPositions(array $positions, float $maxDistance): array {
+    $filtered = [];
+
+    foreach ($positions as $key => $value) {
+        if (distance($value[0], $value[1]) < $maxDistance) {
+            $filtered[] = $value;
+        }
+    }
+
+    return $filtered;
+}
+
+$result = filterPositions($positions, 50);
+
+echo '<pre>';
+var_dump($result);
+echo '</pre>';
+echo '<br>';
